@@ -2,6 +2,8 @@
 
 Application that enables exchange rate conversions.
 
+Demo at: [Currency calculator](https://emerengg.github.io/currency-calculator/)
+
 ## Built in:
 
 - [React](http://facebook.github.io/react)
