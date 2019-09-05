@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/currency-calculator/static/css/main.8ab7a477.chunk.css",
+    "main.js": "/currency-calculator/static/js/main.6a856027.chunk.js",
+    "main.js.map": "/currency-calculator/static/js/main.6a856027.chunk.js.map",
+    "runtime~main.js": "/currency-calculator/static/js/runtime~main.a8f5e66f.js",
+    "runtime~main.js.map": "/currency-calculator/static/js/runtime~main.a8f5e66f.js.map",
+    "static/js/2.f517b95b.chunk.js": "/currency-calculator/static/js/2.f517b95b.chunk.js",
+    "static/js/2.f517b95b.chunk.js.map": "/currency-calculator/static/js/2.f517b95b.chunk.js.map",
+    "index.html": "/currency-calculator/index.html",
+    "precache-manifest.307420fb2849a2712c3311ee22d7f13f.js": "/currency-calculator/precache-manifest.307420fb2849a2712c3311ee22d7f13f.js",
+    "service-worker.js": "/currency-calculator/service-worker.js",
+    "static/css/main.8ab7a477.chunk.css.map": "/currency-calculator/static/css/main.8ab7a477.chunk.css.map"
+  }
+}
