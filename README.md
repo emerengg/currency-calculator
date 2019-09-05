@@ -17,5 +17,5 @@ Application that enables exchange rate conversions.
 ## Using
 	`npm start`
 
-## Testing
+## Tests
 	`npm test`
