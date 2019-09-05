@@ -1,0 +1,701 @@
+
+.j{
+    color: #3D5467;
+    color: #686963;
+    color: #8AA29E;
+    color: #F1EDEE;
+    color: #DB5461;
+}
+
+#root {
+    background-image: linear-gradient(      
+        to right, 
+        #3D5467,
+        #DB5461 50%,
+        #DB5461 50%,
+        #3D5467 100%
+    );
+    color: #8AA29E;
+    height: 100vh;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    /* display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center; */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    background-color: #3D5467;
+    max-width: 600px;
+    margin: auto;
+    font-size: 1.2rem;
+}
+
+.exchange {
+    height: 50vh;
+    display: flex;
+    flex: 0 1 40vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.exchange .title {
+    margin-bottom: 1rem;
+    background-color: linear-gradient(to right, #3D5467, #DB5461);
+    font-size: 2rem;
+    color: #F1EDEE;
+    border-bottom: 3px solid #DB5461;
+}
+
+.calculate {
+    margin-bottom: 1rem;
+}
+
+.calculate .amount {
+    display: flex;
+    flex-direction: column;
+}
+
+.calculate .amount input[type="text"]{ 
+    line-height: 26px;
+    padding-left: 0.2rem;
+    font-weight: bold;
+ }
+
+.calculate button {
+    transition: 500ms;
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    width: 100%;
+    height: 32px;
+    color: #F1EDEE;
+    background-color: #3D5467;
+    border: 1px solid #DB5461;
+}
+ 
+.calculate button:hover {
+    transition: 500ms;
+    background-color: #DB5461;
+}
+
+.calculate .rotate {
+    -moz-transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+}
+
+.calculate .rotate.down {
+    -moz-transform:rotate(180deg);
+    -webkit-transform:rotate(180deg);
+    transform:rotate(180deg);
+}
+
+.calculate .rotate i {
+    font-size: 2rem;
+    transition: 500ms;
+    color: #F1EDEE;
+    cursor: pointer;
+}
+
+.calculate .rotate i:hover {
+    transition: 500ms;
+    color: #DB5461;
+}
+
+.currencyFromTo {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: 0.25rem;
+}
+.currencyFromTo .currencyFrom {
+    display: flex;
+    flex-direction: column;
+}
+
+.currencyFromTo .currencyFrom select {
+    font-weight: bold;
+    height: 2rem;
+}
+
+.currencyFromTo .currencyTo {
+    display: flex;
+    flex-direction: column;
+}
+
+.currencyFromTo .currencyTo select {
+    font-weight: bold;
+    height: 2rem;
+}
+
+.currencyFromTo > div {
+    align-self: flex-end;
+}
+
+.results {
+    text-align: center;
+}
+
+.results > .result {
+    color: #F1EDEE;
+    font-size: 1.7rem;
+}
+
+.results > .date {
+    color: #F1EDEE;
+    border-bottom: 2px solid #DB5461;
+    display: inline-block;
+    margin-bottom: 0.15rem;
+}
+
+.exchange-history {
+    height: 45vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start
+}
+
+.chart {
+    position: relative;
+    height: 95%;
+    padding: 0 0.5rem 0 0.5rem;
+    font-size: 0.5rem;
+    width: 100%;
+}
+
+.olds {
+    top: 0px;
+    left: 0.5rem;
+    margin-top: 0.25rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 0.5em 0 0;
+    
+}
+
+.prevData {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 24px;
+    border: none;
+    margin-left: 1.5rem;
+    transition: 500ms;
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    width: 36px;
+    height: 30px;
+    color: #F1EDEE;
+    background-color: #3D5467;
+    border: 1px solid #DB5461;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prevData:hover {
+    transition: 500ms;
+    background-color: #DB5461;
+}
+
+.nextData {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 24px;
+    border: none;
+    margin-right: 1.5rem;    transition: 500ms;
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    width: 36px;
+    height: 30px;
+    color: #F1EDEE;
+    background-color: #3D5467;
+    border: 1px solid #DB5461;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nextData:hover {
+    transition: 500ms;
+    background-color: #DB5461;
+}
+
+.reference {
+    height: 5vh;
+}
+
+.reference {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.reference a{
+    text-decoration: none;
+    color: #F1EDEE;
+    font-size: 1.25rem;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 300ms ease;
+}
+
+.reference a i{
+    padding-right: 0.25rem;
+}
+
+.reference .brnd {
+    flex: 1;
+    transition: 500ms ease;
+    color: #F1EDEE;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid #F1EDEE;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center */
+}
+
+.reference .brnd:hover {
+    transition: 300ms ease;
+    color: #DB5461;
+}
+
+.reference a > i {
+    flex: 1;
+    transition: 300ms ease;
+    color: #F1EDEE;
+}
+
+.reference a:hover {
+    transition: 300ms ease;
+    color: #DB5461;
+}
+
+.reference a:hover > i{
+    transition: 300ms ease;
+    color: #DB5461;
+}
+
+.reference a > i:hover {
+    transition: 300ms ease;
+    color: #DB5461;
+}
+
+
+.table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-x:auto;
+}
+
+.table-title {
+    margin-bottom: 1rem;
+    font-size: 2.60rem;
+    border-bottom: 3px solid #DB5461;
+    color: #F1EDEE;
+    display: inline-block;
+}
+
+
+.table-title span{
+    text-align: center;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.7rem;
+  }
+  
+
+th {
+    text-align: left;
+    padding: 0 0.5rem 0 0.5rem;
+    color: #8AA29E;
+    font-weight: bold;
+    font-weight: 1000;
+}
+
+td {
+    text-align: left;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    color: #F1EDEE;
+    border-bottom: 1px solid #ddd;
+}
+
+td:first-child { 
+    text-align: left;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    color: #8AA29E;
+    font-weight: 1000;
+    border: none;
+}
+
+tr:hover {
+    background-color: rgba(219, 84, 98, 0.500);
+}
+
+td:hover  {
+    background-color: rgba(219, 84, 98, 1);
+}
+
+.loading {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+  
+.loader {
+    border-radius: 50%;
+    border-top: 6px solid #DB5461;
+    border-right: 6px solid transparent;
+    width: 125px;
+    height: 125px;
+    -webkit-animation: spin 0.8s linear infinite; /* Safari */
+    animation: spin 0.8s linear infinite;
+}
+
+.ldr {
+    position: absolute;
+}
+  
+/* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-height: 600px) and (max-width: 500px){
+    .main {
+        font-size: 1rem;
+    }
+
+    .exchange .title {
+        font-size: 1.8rem;
+        border-bottom: 2px solid #DB5461;
+        margin-bottom: 0.5rem;
+    }
+
+    .calculate {
+        margin-bottom: 0.5rem;
+    }
+
+    .table-title {
+        font-size: 1.8rem;
+        border-bottom: 2px solid #DB5461;
+        margin-bottom: 0.15rem;
+    }
+
+}
+
+@media (min-height: 600px){
+    .exchange {
+        height: 50vh;
+    }    
+    .exchange-history {
+        height: 45vh;
+    }
+    .calculate {
+        margin-bottom: 0.5rem;
+    }
+    .table-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+}
+
+@media (max-width: 500px) and (min-height: 700px){
+    .main{
+        max-width: 600px;
+        margin: auto;
+        font-size: 1.45rem;
+    }
+}
+
+@media (min-width: 500px) and (min-height: 750px){
+    .main{
+        max-width: 600px;
+        margin: auto;
+        font-size: 2rem;
+    }
+
+    .exchange {
+        height: 40vh;
+    }
+
+    .exchange .title {
+        font-size: 2.60rem;
+        margin-bottom: 1rem;
+    }
+
+
+    .exchange-history {
+        height: 55vh;
+    }
+
+    .calculate {
+        display: flex;
+        margin-bottom: 1rem;
+    }
+
+    .calculate div {
+        margin-left: 0.25rem;
+    }
+
+    .calculate button {
+        margin-left: 0.5rem;
+        width: 125px;
+        align-self: flex-end;    
+        margin-bottom: 0.25rem;
+    }
+
+    .calculate .rotate i {
+        font-size: 2.5rem;
+        margin: 0 0.25rem 0 0.25rem;
+    }
+
+    .calculate .amount input[type="text"]{ 
+        font-size: 1.2rem;
+        font-weight: bold;
+        height: 34px;
+        width: 175px;
+     }
+
+    .currencyFromTo .currencyFrom select {
+        font-size: 1.1rem;
+        cursor: pointer;
+        height: 2.5rem;
+    }
+
+    .currencyFromTo .currencyTo select {
+        font-size: 1.1rem;
+        cursor: pointer;
+        height: 2.5rem;
+    }
+
+    .calculate button {
+        height: 2.5rem;
+        width: 150px;
+    }
+
+    .results {
+        text-align: center;
+    }
+
+    .results div {
+        margin-bottom: 0.3rem;
+    }
+    
+    .results > .result {
+        color: #F1EDEE;
+        font-size: 2.5rem;
+    }
+    
+    .results > .date {
+        color: #F1EDEE;
+        border-bottom: 2px solid #DB5461;
+        display: inline-block;
+    }
+
+    .chart {
+        font-size: 1.3rem;
+    }
+}
+
+
+  
+  /* tr:nth-child(even) {
+    background-color: #DB5461;
+  } */
+
+/* #root {
+    height: 100vh;
+    background-color: aquamarine;
+}
+
+.main {
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+.exchange-history {
+    width: 100%;
+    transition: 300ms;
+}
+
+.exchange {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    transition: 300ms;
+    margin-bottom: 1em;
+    max-width: 800px;
+}
+
+.chart-history {
+    width: 800px;
+}
+
+canvas {
+}
+
+.calculate {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-bottom: 0.5em;
+}
+
+
+label {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+select {
+    width: 100px;
+    height: 100%;
+    font-size: 16px;
+    font-weight: 800;
+    border: 1px solid black
+}
+
+.amount {
+    display: flex;
+    flex-direction: column;
+}
+
+.amount > input {
+    height: 32px;
+    font-size: 16px;
+    font-weight: 800;
+    border: 1px solid black;
+    padding-left: 0.5em;
+}
+
+.change {
+    display: flex;
+}
+
+.change > i {
+    align-self: center;
+}
+
+.check {
+    background-color: #557a95;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    color: white;
+    margin: 4px 2px;
+    font-size: 24px;
+    text-decoration: none;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+
+.results {
+    transition: 300ms;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.results > .date {
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
+
+.result {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.f1t {
+    text-align: center;
+    font-weight: bold;
+
+} 
+
+
+.currencyFromTo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.currencyFromTo > i {
+    align-self: flex-end;
+}
+.currencyFromTo > label {
+    /* visibility: hidden;
+    display: none; */
+/* }
+
+.currencyFrom {
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.currencyFrom > select {
+    height: 32px;
+}
+
+.currencyTo {
+    
+    display: flex;
+    flex-direction: column;
+} */ 
