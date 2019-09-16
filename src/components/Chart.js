@@ -10,8 +10,8 @@ class Exchange extends Component {
         const currency = rates.map(key => Object.keys(key)[0] === ct ? Object.values(key)[0] : Object.values(key)[1]);
         const x = 5;
         const y = 0;
-        const labels = dates.length > 20 && [...dates].reverse().slice(0,20);
-        const data = currency.length > 20 && [...currency].reverse().slice(0,20);
+        const labels = dates.length >= 20 && [...dates].reverse().slice(0,20);
+        const data = currency.length >= 20 && [...currency].reverse().slice(0,20);
          
         this.state = {
             cf: cf,
@@ -43,8 +43,8 @@ class Exchange extends Component {
             const dates = rates.map(key => key.date);
             const currency = rates.map(key => Object.keys(key)[0] === ct ? Object.values(key)[0] : Object.values(key)[1]);
             const label = ct;
-            const labels = dates.length > 20 && [...dates].reverse().slice(0,20);
-            const data = currency.length > 20 && [...currency].reverse().slice(0,20);
+            const labels = dates.length >= 20 && [...dates].reverse().slice(0,20);
+            const data = currency.length >= 20 && [...currency].reverse().slice(0,20);
             this.setState({
                 cf: cf,
                 ct: ct,      
