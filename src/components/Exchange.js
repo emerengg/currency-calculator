@@ -16,7 +16,6 @@ class Exchange extends Component {
             latestRates: { rates: null, date: null, base: null },
             chartData: null,
             currentDate: null,
-            
             currencyFrom: "EUR",
             currencyTo: "PLN",
         };
@@ -33,7 +32,7 @@ class Exchange extends Component {
                     currentDate
                 })
                 localStorage.clear();
-                this.getLatestRates()
+                this.getLatestRates();
             }else {
                 this.setState({
                     currentDate,
@@ -45,15 +44,15 @@ class Exchange extends Component {
                 currentDate
             })
             localStorage.clear();
-            this.getLatestRates()
+            this.getLatestRates();
         }
     }
 
     getLatestRates = async () => {
         try{
-            const res = await fetchLatestRates()
-            const { base, date, rates } = res
-            rates[base] = 1
+            const res = await fetchLatestRates();
+            const { base, date, rates } = res;
+            rates[base] = 1;
 
             this.setState({
                 latestRates: { date, rates, base }
@@ -79,19 +78,19 @@ class Exchange extends Component {
     }
 
     render() {
-        const { latestRates, currentDate, currencyFrom, currencyTo, chartData } = this.state
+        const { latestRates, currentDate, currencyFrom, currencyTo, chartData } = this.state;
         return (
             <main className="main">
                 <section className="exchange">
                     {latestRates.rates ? 
-                            <Calculate 
-                                latestRates={latestRates} 
-                                getChartData={this.handleChartData} 
-                                switch={this.switchCurrencies}
-                                currentDate={currentDate}
-                                currencyFrom={currencyFrom}
-                                currencyTo={currencyTo}
-                            />
+                        <Calculate 
+                            latestRates={latestRates} 
+                            getChartData={this.handleChartData} 
+                            switch={this.switchCurrencies}
+                            currentDate={currentDate}
+                            currencyFrom={currencyFrom}
+                            currencyTo={currencyTo}
+                        />
                     :
                         <div className="loading">
                             <div className="loader"></div>
@@ -112,9 +111,7 @@ class Exchange extends Component {
                     }
                 </section>
 
-                <section className="reference">
-                    <a href="https://github.com/emerengg/currency-calculator"><i className="fab fa-github fa-lg"></i>Github</a>
-                </section>
+                <Reference />
             </main>
         );
     }
