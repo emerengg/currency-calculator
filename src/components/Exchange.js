@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Chart from './Chart'
 import Table from './Table'
 import Calculate from './Calculate';
+import Reference from './Reference';
 
 import './Exchange.css'
 
